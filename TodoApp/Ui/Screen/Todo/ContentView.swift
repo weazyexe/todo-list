@@ -20,8 +20,12 @@ struct ContentView: View {
             .navigationBarTitle("Todo List", displayMode: .inline)
             .navigationBarItems(
                 trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "plus")
-                        .foregroundColor(.blue)
+                    NavigationLink(
+                        destination: AddView(onAddClick: viewModel.addItem)
+                    ) {
+                        Image(systemName: "plus")
+                            .foregroundColor(.blue)
+                    }
                 })
             )
         }

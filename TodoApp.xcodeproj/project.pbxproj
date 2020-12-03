@@ -16,6 +16,7 @@
 		763A126D25793B4F005E19FF /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A126C25793B4F005E19FF /* CheckView.swift */; };
 		763A127325793C97005E19FF /* TodoItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A127225793C96005E19FF /* TodoItemListView.swift */; };
 		763A12762579409A005E19FF /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A12752579409A005E19FF /* TodoViewModel.swift */; };
+		763A127E25794BD3005E19FF /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A127D25794BD3005E19FF /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		763A126C25793B4F005E19FF /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		763A127225793C96005E19FF /* TodoItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemListView.swift; sourceTree = "<group>"; };
 		763A12752579409A005E19FF /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		763A127D25794BD3005E19FF /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +109,14 @@
 		763A126B25793B16005E19FF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				763A127025793BE9005E19FF /* Main */,
+				763A127C25794B78005E19FF /* Add */,
+				763A127025793BE9005E19FF /* Todo */,
 				763A124625791472005E19FF /* TodoApp.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		763A127025793BE9005E19FF /* Main */ = {
+		763A127025793BE9005E19FF /* Todo */ = {
 			isa = PBXGroup;
 			children = (
 				763A124825791472005E19FF /* ContentView.swift */,
@@ -121,7 +124,15 @@
 				763A127225793C96005E19FF /* TodoItemListView.swift */,
 				763A12752579409A005E19FF /* TodoViewModel.swift */,
 			);
-			path = Main;
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		763A127C25794B78005E19FF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				763A127D25794BD3005E19FF /* AddView.swift */,
+			);
+			path = Add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				763A126625793A1D005E19FF /* TodoItemView.swift in Sources */,
 				763A12602579217A005E19FF /* TodoItem.swift in Sources */,
 				763A127325793C97005E19FF /* TodoItemListView.swift in Sources */,
+				763A127E25794BD3005E19FF /* AddView.swift in Sources */,
 				763A124725791472005E19FF /* TodoApp.swift in Sources */,
 				763A12762579409A005E19FF /* TodoViewModel.swift in Sources */,
 				763A126D25793B4F005E19FF /* CheckView.swift in Sources */,

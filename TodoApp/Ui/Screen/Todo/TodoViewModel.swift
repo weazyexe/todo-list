@@ -32,4 +32,8 @@ class TodoViewModel: ObservableObject {
             completed: !newItem.completed
         )
     }
+    
+    func addItem(item: TodoItem) {
+        items.append(item)
+    }
 }
