@@ -9,24 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let todoItems: [TodoItem] = [
-        TodoItem(title: "Learn SwiftUI", description: "Run Xcode and heckin learn it dude", completed: false),
-        TodoItem(title: "Buy smth", description: "Today", completed: false),
-        TodoItem(title: "Push the project to GitHub", description: nil, completed: true)
-    ]
+    @ObservedObject var viewModel = TodoViewModel()
     
     var body: some View {
         NavigationView {
-            TodoItemListView(items: todoItems)
-                .padding()
-                .navigationBarTitle("Todo List", displayMode: .inline)
-                .navigationBarItems(
-                    trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.blue)
-                    })
-                )
+            TodoItemListView(
+                items: viewModel.items,
+                onItemClick: viewModel.onItemClick
+            )
+            .navigationBarTitle("Todo List", displayMode: .inline)
+            .navigationBarItems(
+                trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "plus")
+                        .foregroundColor(.blue)
+                })
+            )
         }
+        .onAppear(perform: onAppear)
+    }
+    
+    private func onAppear() {
+        viewModel.loadItems()
     }
 }
 

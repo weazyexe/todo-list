@@ -11,12 +11,20 @@ struct TodoItemListView: View {
     
     var items: [TodoItem]
     
+    var onItemClick: (_:TodoItem) -> Void
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            ForEach(items) { todoItem in
-                TodoItemView(todoItem: todoItem)
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                ForEach(items) { item in
+                    TodoItemView(
+                        item: item,
+                        onItemClick: onItemClick
+                    )
+                }
+                Spacer()
             }
-            Spacer()
+            .padding()
         }
     }
 }
@@ -30,7 +38,9 @@ struct TodoItemListView_Previews: PreviewProvider {
             TodoItem(title: "Push the project to GitHub", description: nil, completed: true)
         ]
         
-        TodoItemListView(items: todoItems)
-            .padding()
+        TodoItemListView(
+            items: todoItems,
+            onItemClick: {_ in}
+        )
     }
 }

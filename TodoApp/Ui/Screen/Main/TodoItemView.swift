@@ -8,19 +8,28 @@
 import SwiftUI
 
 struct TodoItemView: View {
-    var todoItem: TodoItem
+    
+    var item: TodoItem
+    
+    var onItemClick: (_:TodoItem) -> Void
+    
     var body: some View {
         HStack {
-            CheckView(isChecked: todoItem.completed)
-            VStack(alignment: .leading) {
-                Text(todoItem.title)
-                if let description = todoItem.description {
-                    Text(description)
-                        .foregroundColor(.gray)
-                        .font(.system(size: 12))
+            Button(action: {
+                onItemClick(item)
+            }) {
+                CheckView(isChecked: item.completed)
+                VStack(alignment: .leading) {
+                    Text(item.title)
+                        .foregroundColor(.black)
+                    if let description = item.description {
+                        Text(description)
+                            .foregroundColor(.gray)
+                            .font(.system(size: 12))
+                    }
                 }
+                Spacer()
             }
-            Spacer()
         }
     }
 }
@@ -28,11 +37,12 @@ struct TodoItemView: View {
 struct TodoItemView_Previews: PreviewProvider {
     static var previews: some View {
         TodoItemView(
-            todoItem: TodoItem(
+            item: TodoItem(
                 title: "Title",
                 description: "Subtitle",
                 completed: true
-            )
+            ),
+            onItemClick: {_ in}
         )
     }
 }

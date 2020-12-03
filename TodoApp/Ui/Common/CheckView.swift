@@ -14,6 +14,7 @@ struct CheckView: View {
         Image(systemName: icon)
             .resizable()
             .frame(width: 20, height: 20)
+            .foregroundColor(.black)
             .accentColor(.blue)
             .padding(.trailing, 8)
     }
